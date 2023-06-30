@@ -2,8 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MediaPlayerWithTest.Core\MediaPlayerWithTest.Core.csproj" />
-    <ProjectReference Include="..\MediaPlayerWithTest.Controller\MediaPlayerWithTest.Controller.csproj" />
     <ProjectReference Include="..\MediaPlayerWithTest.Service\MediaPlayerWithTest.Service.csproj" />
+    <ProjectReference Include="..\MediaPlayerWithTest.Controller\MediaPlayerWithTest.Controller.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
