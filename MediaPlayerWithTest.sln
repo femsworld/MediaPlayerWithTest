@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer", "MediaPlayer\MediaPlayer.csproj", "{D72517D1-1CA5-4DD8-8DC1-26737C1E8B02}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayerWithTest.Controller", "MediaPlayerWithTest.Controller\MediaPlayerWithTest.Controller.csproj", "{32AB8546-0DFB-4662-9D77-DD91FDCACC5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayerWithTest.Service", "MediaPlayerWithTest.Service\MediaPlayerWithTest.Service.csproj", "{3A29342F-E5FE-4A2C-AF68-9A4F01EA36F3}"

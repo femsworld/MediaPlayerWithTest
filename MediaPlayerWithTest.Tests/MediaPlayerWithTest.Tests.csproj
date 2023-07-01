@@ -22,4 +22,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MediaPlayerWithTest.Controller\MediaPlayerWithTest.Controller.csproj" />
+    <ProjectReference Include="..\MediaPlayerWithTest.Service\MediaPlayerWithTest.Service.csproj" />
+    <ProjectReference Include="..\MediaPlayerWithTest.Core\MediaPlayerWithTest.Core.csproj" />
+  </ItemGroup>
+
 </Project>
