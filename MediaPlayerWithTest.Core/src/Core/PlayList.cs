@@ -4,6 +4,8 @@ namespace MediaPlayerWithTest.Core.src.Core
     {
         private readonly List<MediaFile> _files = new();
         private readonly int _userId;
+        
+        public IReadOnlyList<MediaFile> Files => _files;
 
         public string ListName { get; set; }
 

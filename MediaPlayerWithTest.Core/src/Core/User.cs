@@ -28,5 +28,6 @@ namespace MediaPlayerWithTest.Core.src.Core
             else
                 throw new ArgumentNullException("Playlist is not found");
         }
+        public List<PlayList> Lists => _lists;
     }
 }
