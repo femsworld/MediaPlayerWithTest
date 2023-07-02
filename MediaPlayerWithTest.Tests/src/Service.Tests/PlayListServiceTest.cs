@@ -35,9 +35,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
             var playListService = new PlayListService(mockPlayListRepository.Object);
             int playListId = 1;
             int userId = 3;
-
             playListService.EmptyList(playListId, userId);
-
             mockPlayListRepository.Verify(
                 repo => repo.EmptyList(playListId, userId),
                 Times.Once
@@ -52,9 +50,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
         {
             var mockPlayListRepository = new Mock<IPlayListRepository>();
             var playListService = new PlayListService(mockPlayListRepository.Object);
-
             playListService.RemoveFile(playListId, fileId, userId);
-
             mockPlayListRepository.Verify(
                 repo => repo.RemoveFile(playListId, fileId, userId),
                 Times.Once

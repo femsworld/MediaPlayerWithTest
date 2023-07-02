@@ -31,9 +31,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
             var mediaRepositoryMock = new Mock<IMediaRepository>();
             var mediaService = new MediaService(mediaRepositoryMock.Object);
             int fileId = 1;
-
             mediaService.DeleteFileById(fileId);
-
             mediaRepositoryMock.Verify(r => r.DeleteFileById(fileId), Times.Once);
         }
 
@@ -42,9 +40,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
         {
             var mediaRepositoryMock = new Mock<IMediaRepository>();
             var mediaService = new MediaService(mediaRepositoryMock.Object);
-
             mediaService.GetAllFiles();
-
             mediaRepositoryMock.Verify(r => r.GetAllFiles(), Times.Once);
         }
 
@@ -54,9 +50,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
             var mediaRepositoryMock = new Mock<IMediaRepository>();
             var mediaService = new MediaService(mediaRepositoryMock.Object);
             int fileId = 1;
-
             mediaService.GetFileById(fileId);
-
             mediaRepositoryMock.Verify(r => r.GetFileById(fileId), Times.Once);
         }
     }

@@ -24,9 +24,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
             var userService = new UserService(userRepositoryMock.Object);
             var name = "My List";
             var userId = 1;
-
             userService.AddNewList(name, userId);
-
             userRepositoryMock.Verify(x => x.AddNewList(name, userId), Times.Once);
         }
 
@@ -37,9 +35,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
             var userService = new UserService(userRepositoryMock.Object);
             var listId = 1;
             var userId = 1;
-
             userService.EmptyOneList(listId, userId);
-
             userRepositoryMock.Verify(x => x.EmptyOneList(listId, userId), Times.Once);
         }
 
@@ -49,9 +45,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
             var userRepositoryMock = new Mock<IUserRepository>();
             var userService = new UserService(userRepositoryMock.Object);
             var userId = 1;
-
             userService.GetAllList(userId);
-
             userRepositoryMock.Verify(x => x.GetAllList(userId), Times.Once);
         }
 
@@ -61,9 +55,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
             var userRepositoryMock = new Mock<IUserRepository>();
             var userService = new UserService(userRepositoryMock.Object);
             var listId = 1;
-
             userService.GetListById(listId);
-
             userRepositoryMock.Verify(x => x.GetListById(listId), Times.Once);
         }
 
@@ -73,9 +65,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
             var userRepositoryMock = new Mock<IUserRepository>();
             var userService = new UserService(userRepositoryMock.Object);
             var userId = 1;
-
             userService.RemoveAllLists(userId);
-
             userRepositoryMock.Verify(x => x.RemoveAllLists(userId), Times.Once);
         }
 
@@ -87,9 +77,7 @@ namespace MediaPlayerWithTest.Tests.src.Service.Tests
         {
             var userRepositoryMock = new Mock<IUserRepository>();
             var userService = new UserService(userRepositoryMock.Object);
-
             userService.RemoveOneList(listId, userId);
-
             userRepositoryMock.Verify(x => x.RemoveOneList(listId, userId), Times.Once);
         }
 

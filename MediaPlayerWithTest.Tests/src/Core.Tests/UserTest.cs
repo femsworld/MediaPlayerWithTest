@@ -21,9 +21,7 @@ namespace MediaPlayerWithTest.Tests.src.Core.Tests
         {
             var user = User.Instance;
             var list = new PlayList("My List", 1);
-
             user.AddNewList(list);
-
             Assert.Contains(list, user.Lists);
         }
 
@@ -33,9 +31,7 @@ namespace MediaPlayerWithTest.Tests.src.Core.Tests
             var user = User.Instance;
             var list = new PlayList("My List", 1);
             user.AddNewList(list);
-
             user.RemoveOneList(list);
-
             Assert.DoesNotContain(list, user.Lists);
         }
 
@@ -45,9 +41,7 @@ namespace MediaPlayerWithTest.Tests.src.Core.Tests
             var user = User.Instance;
             var list = new PlayList("My List", 1);
             user.AddNewList(list);
-
             user.EmptyOneList(list);
-
             Assert.Empty(list.Files);
         }
 
@@ -56,7 +50,6 @@ namespace MediaPlayerWithTest.Tests.src.Core.Tests
         {
             var user = User.Instance;
             var nonExistingList = new PlayList("Non-existing List", 2);
-            
             Assert.Throws<ArgumentNullException>(() => user.EmptyOneList(nonExistingList));
         }
     }
