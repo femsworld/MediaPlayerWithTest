@@ -18,12 +18,18 @@ namespace MediaPlayerWithTest.Controller.src
 
         public void CreateNewFile(string fileName, string filePath, TimeSpan duration)
         {
-            _mediaService.CreateNewFile(fileName, filePath, duration);
+            if (IsValidFileName(fileName) && IsValidFilePath(filePath) && IsValidDuration(duration))
+            {
+                _mediaService.CreateNewFile(fileName, filePath, duration);
+            }
         }
 
         public void DeleteFileById(int id)
         {
-            _mediaService.DeleteFileById(id);
+            if (IsValidId(id))
+            {
+                _mediaService.DeleteFileById(id);
+            }
         }
 
         public void GetAllFiles()
@@ -33,7 +39,31 @@ namespace MediaPlayerWithTest.Controller.src
 
         public void GetFileById(int id)
         {
-            _mediaService.GetFileById(id);
+             if (IsValidId(id))
+            {
+                _mediaService.GetFileById(id);
+            }
         }
+
+        private static bool IsValidFileName(string fileName)
+        {
+            return !string.IsNullOrEmpty(fileName);
+        }
+
+        private static bool IsValidFilePath(string filePath)
+        {
+            return !string.IsNullOrEmpty(filePath);
+        }
+
+        private static bool IsValidDuration(TimeSpan duration)
+        {
+            return duration > TimeSpan.Zero;
+        }
+
+        private static bool IsValidId(int id)
+        {
+            return id > 0;
+        }
+
     }
 }

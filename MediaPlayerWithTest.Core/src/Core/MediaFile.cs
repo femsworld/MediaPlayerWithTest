@@ -46,7 +46,7 @@ namespace MediaPlayerWithTest.Core.src.Core
         {
         }
 
-        public void Play()
+        public virtual void Play()
         {
             if (!_isPlaying)
             {
@@ -58,7 +58,7 @@ namespace MediaPlayerWithTest.Core.src.Core
             }
         }
 
-        public void Pause()
+        public virtual void Pause()
         {
             if (_isPlaying)
             {
@@ -70,7 +70,7 @@ namespace MediaPlayerWithTest.Core.src.Core
             }
         }
 
-        public void Stop()
+        public virtual void Stop()
         {
             if (_isPlaying)
             {

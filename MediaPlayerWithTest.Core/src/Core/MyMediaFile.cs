@@ -14,6 +14,24 @@ namespace MediaPlayerWithTest.Core.src.Core
             IsPlaying = false;
             CurrentPosition = TimeSpan.Zero; 
         }
+
+        public override void Play()
+        {
+            base.Play();
+            IsPlaying = true;
+        }
+
+        public override void Pause()
+        {
+            base.Pause();
+            IsPlaying = false;
+        }
+
+        public override void Stop()
+        {
+            base.Stop();
+            IsPlaying = false;
+        }
         public static bool IsValidPlaybackSpeed(double speed)
         {
             double[] validSpeeds = { 0.25, 0.5, 1, 1.25, 1.5, 1.75, 2 };
