@@ -39,6 +39,20 @@ namespace MediaPlayerWithTest.Tests.src.Controller.Tests
         }
 
         [Fact]
+        public void AddNewList_InvalidData_DoesNotCallAddNewListInUserService()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            var userController = new UserController(userServiceMock.Object);
+            string? name = null;
+            var userId = 0;
+            userController.AddNewList(name, userId);
+            userServiceMock.Verify(
+                service => service.AddNewList(It.IsAny<string>(), It.IsAny<int>()),
+                Times.Never
+            );
+        }
+
+        [Fact]
         public void EmptyOneList_ValidData_CallsEmptyOneListInUserService()
         {
             var userServiceMock = new Mock<IUserService>();
@@ -49,6 +63,20 @@ namespace MediaPlayerWithTest.Tests.src.Controller.Tests
             userServiceMock.Verify(
                 service => service.EmptyOneList(listId, userId),
                 Times.Once
+            );
+        }
+
+        [Fact]
+        public void EmptyOneList_InvalidData_DoesNotCallEmptyOneListInUserService()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            var userController = new UserController(userServiceMock.Object);
+            var listId = 0;
+            var userId = 0;
+            userController.EmptyOneList(listId, userId);
+            userServiceMock.Verify(
+                service => service.EmptyOneList(It.IsAny<int>(), It.IsAny<int>()),
+                Times.Never
             );
         }
 
@@ -66,6 +94,19 @@ namespace MediaPlayerWithTest.Tests.src.Controller.Tests
         }
 
         [Fact]
+        public void GetAllList_InvalidUserId_DoesNotCallGetAllListInUserService()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            var userController = new UserController(userServiceMock.Object);
+            var userId = 0;
+            userController.GetAllList(userId);
+            userServiceMock.Verify(
+                service => service.GetAllList(It.IsAny<int>()),
+                Times.Never
+            );
+        }
+
+        [Fact]
         public void GetListById_ValidListId_CallsGetListByIdInUserService()
         {
             var userServiceMock = new Mock<IUserService>();
@@ -79,6 +120,19 @@ namespace MediaPlayerWithTest.Tests.src.Controller.Tests
         }
 
         [Fact]
+        public void GetListById_InvalidListId_DoesNotCallGetListByIdInUserService()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            var userController = new UserController(userServiceMock.Object);
+            var listId = 0;
+            userController.GetListById(listId);
+            userServiceMock.Verify(
+                service => service.GetListById(It.IsAny<int>()),
+                Times.Never
+            );
+        }
+
+        [Fact]
         public void RemoveAllLists_ValidUserId_CallsRemoveAllListsInUserService()
         {
             var userServiceMock = new Mock<IUserService>();
@@ -88,6 +142,33 @@ namespace MediaPlayerWithTest.Tests.src.Controller.Tests
             userServiceMock.Verify(
                 service => service.RemoveAllLists(userId),
                 Times.Once
+            );
+        }
+
+        [Fact]
+        public void RemoveAllLists_InvalidUserId_DoesNotCallRemoveAllListsInUserService()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            var userController = new UserController(userServiceMock.Object);
+            var userId = 0;
+            userController.RemoveAllLists(userId);
+            userServiceMock.Verify(
+                service => service.RemoveAllLists(It.IsAny<int>()),
+                Times.Never
+            );
+        }
+
+        [Fact]
+        public void RemoveOneList_InvalidData_DoesNotCallRemoveOneListInUserService()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            var userController = new UserController(userServiceMock.Object);
+            var listId = 0;
+            var userId = 0;
+            userController.RemoveOneList(listId, userId);
+            userServiceMock.Verify(
+                service => service.RemoveOneList(It.IsAny<int>(), It.IsAny<int>()),
+                Times.Never
             );
         }
 
